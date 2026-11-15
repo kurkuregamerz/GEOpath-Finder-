@@ -9,7 +9,8 @@
 		(date "2026-11-13")
 		(rev "v1")
 		(comment 1 "Designed by Ishan Karar")
-		(comment 2 "For #fallen 2026")
+		(comment 2 "Inspected by @DS1010 on Slack")
+		(comment 3 "For #fallen 2026")
 	)
 	(lib_symbols
 		(symbol "8205A:8205A"
@@ -10693,6 +10694,12 @@
 		(uuid "41c86c46-f709-4908-a70a-dcbee5171d46")
 	)
 	(junction
+		(at 276.86 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "41fca733-1929-42ce-b0ca-a4a20feafdb7")
+	)
+	(junction
 		(at 207.01 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10739,6 +10746,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "55fd443f-076c-4858-8239-4c0b6898ef6f")
+	)
+	(junction
+		(at 276.86 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56160566-2dc0-426b-9511-458070ad4e25")
 	)
 	(junction
 		(at 217.17 123.19)
@@ -10843,6 +10856,12 @@
 		(uuid "991f27ec-c578-47b0-904d-232b002ec8bb")
 	)
 	(junction
+		(at 261.62 15.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b76d8df-b901-4c07-9da0-219416f162ff")
+	)
+	(junction
 		(at 58.42 148.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10901,6 +10920,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b5bff105-3811-464e-b394-d3de3152a1f4")
+	)
+	(junction
+		(at 278.13 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ba8a554f-9827-4bd7-941e-d0dca6368c1d")
 	)
 	(junction
 		(at 276.86 109.22)
@@ -11009,10 +11034,6 @@
 		(uuid "0e5d8c39-bdb0-4b9f-be19-47400fe2d16f")
 	)
 	(no_connect
-		(at 276.86 50.8)
-		(uuid "17480929-6814-443b-a803-1d7a1e127098")
-	)
-	(no_connect
 		(at 181.61 33.02)
 		(uuid "1f4b2986-a2a6-4584-b04c-879a959cafa8")
 	)
@@ -11117,10 +11138,6 @@
 		(uuid "8cb33bae-04e7-4379-a941-f8eeb995f2ee")
 	)
 	(no_connect
-		(at 276.86 48.26)
-		(uuid "8d144f29-db79-4974-9446-89b0577bb09e")
-	)
-	(no_connect
 		(at 81.28 43.18)
 		(uuid "9328e069-11c9-4f83-9299-e4b433ee73b3")
 	)
@@ -11186,7 +11203,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 53.34) (xy 284.48 45.72)
+			(xy 284.48 57.15) (xy 284.48 45.72)
 		)
 		(stroke
 			(width 0)
@@ -11436,6 +11453,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 55.88) (xy 278.13 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18bb4961-a659-432d-8f57-a819594396ff")
+	)
+	(wire
+		(pts
 			(xy 63.5 176.53) (xy 63.5 186.69)
 		)
 		(stroke
@@ -11453,6 +11480,16 @@
 			(type default)
 		)
 		(uuid "18fc6870-f869-42f3-8b41-7e43e62b5092")
+	)
+	(wire
+		(pts
+			(xy 276.86 58.42) (xy 275.59 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "193771d8-d1f3-40e7-9a25-dafd134f76e3")
 	)
 	(wire
 		(pts
@@ -11596,6 +11633,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 48.26) (xy 278.13 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2990e36d-90f3-4dc0-81a3-717c87c96ea7")
+	)
+	(wire
+		(pts
 			(xy 276.86 111.76) (xy 276.86 114.3)
 		)
 		(stroke
@@ -11643,16 +11690,6 @@
 			(type default)
 		)
 		(uuid "2fd1f2ae-b12b-4e62-9b35-c818a86b133b")
-	)
-	(wire
-		(pts
-			(xy 275.59 53.34) (xy 284.48 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30341b03-8c62-44c7-8b43-5ea224378142")
 	)
 	(wire
 		(pts
@@ -11753,6 +11790,16 @@
 			(type default)
 		)
 		(uuid "358ed265-7e34-4f9e-91ce-f089214cbdd0")
+	)
+	(wire
+		(pts
+			(xy 276.86 50.8) (xy 276.86 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35a347c3-e1fd-4efc-a4d0-58458c09b130")
 	)
 	(wire
 		(pts
@@ -12116,6 +12163,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 57.15) (xy 284.48 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b4bf2f4-a76a-48b4-94d4-6a964fedf9d4")
+	)
+	(wire
+		(pts
 			(xy 198.12 87.63) (xy 200.66 87.63)
 		)
 		(stroke
@@ -12176,7 +12233,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 54.61) (xy 275.59 53.34)
+			(xy 276.86 58.42) (xy 276.86 57.15)
 		)
 		(stroke
 			(width 0)
@@ -12516,6 +12573,16 @@
 	)
 	(wire
 		(pts
+			(xy 278.13 48.26) (xy 278.13 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ca899f2-228c-48e1-b5bc-53317f6a3265")
+	)
+	(wire
+		(pts
 			(xy 57.15 184.15) (xy 60.96 184.15)
 		)
 		(stroke
@@ -12573,6 +12640,16 @@
 			(type default)
 		)
 		(uuid "811d7abb-c137-4a39-8f43-475c8b6ec2b4")
+	)
+	(wire
+		(pts
+			(xy 276.86 55.88) (xy 276.86 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8128a337-3519-4eda-ae97-6b07899739b7")
 	)
 	(wire
 		(pts
@@ -13256,6 +13333,16 @@
 	)
 	(wire
 		(pts
+			(xy 261.62 13.97) (xy 261.62 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba46d370-f6ca-4957-a7a2-4e491ef33a89")
+	)
+	(wire
+		(pts
 			(xy 83.82 133.35) (xy 83.82 127)
 		)
 		(stroke
@@ -13366,6 +13453,16 @@
 	)
 	(wire
 		(pts
+			(xy 278.13 16.51) (xy 261.62 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c439964f-12f9-4bba-912a-beba6b6ddbbb")
+	)
+	(wire
+		(pts
 			(xy 274.32 86.36) (xy 276.86 86.36)
 		)
 		(stroke
@@ -13473,6 +13570,16 @@
 			(type default)
 		)
 		(uuid "cd66a3d4-31d2-4299-89c5-f08a6eb2024c")
+	)
+	(wire
+		(pts
+			(xy 270.51 15.24) (xy 269.24 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf40f867-4db4-46fc-b361-0559c1954fbb")
 	)
 	(wire
 		(pts
@@ -13603,6 +13710,16 @@
 			(type default)
 		)
 		(uuid "da9d2ffe-4149-466a-92f9-b2cd0ea39cda")
+	)
+	(wire
+		(pts
+			(xy 261.62 15.24) (xy 261.62 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dabdaa2a-464a-4716-9a00-87512bf630a5")
 	)
 	(wire
 		(pts
@@ -14715,6 +14832,85 @@
 		(uuid "f5a880b8-9af3-4a50-820a-d97fe04f7bac")
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 265.43 15.24 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "03b26671-5e50-431b-8350-ddd4bb090a20")
+		(property "Reference" "C5"
+			(at 263.144 13.97 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 269.494 13.97 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 14.2748 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 265.43 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 265.43 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "76e95453-4907-49ee-abad-868be5c1973d")
+		)
+		(pin "1"
+			(uuid "34b3f6c8-c653-40d2-a77e-14ea6234c161")
+		)
+		(instances
+			(project "GEOpath FInder Proto 3"
+				(path "/e3cd1eca-dcd6-4b32-aed0-a3b0a50a81a9"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Battery_Management:TP4056-42-ESOP8")
 		(at 76.2 176.53 90)
 		(unit 1)
@@ -15656,7 +15852,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 261.62 16.51 0)
+		(at 261.62 13.97 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15666,7 +15862,7 @@
 		(dnp no)
 		(uuid "2aeffe7b-9cba-4854-b6ac-ee9c00733d04")
 		(property "Reference" "#PWR022"
-			(at 261.62 20.32 0)
+			(at 265.43 13.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15677,7 +15873,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 262.89 17.78 90)
+			(at 256.032 13.97 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15687,7 +15883,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 261.62 16.51 0)
+			(at 261.62 13.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15698,7 +15894,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 261.62 16.51 0)
+			(at 261.62 13.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15709,7 +15905,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 261.62 16.51 0)
+			(at 261.62 13.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21948,6 +22144,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 270.51 15.24 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9d33017-f875-4764-abc0-7eb8d4378101")
+		(property "Reference" "#PWR052"
+			(at 276.86 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 274.32 15.2399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 270.51 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 270.51 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5e40d5bd-b0d3-4494-846f-59ccf1bc5b1f")
+		)
+		(instances
+			(project "GEOpath FInder Proto 3"
+				(path "/e3cd1eca-dcd6-4b32-aed0-a3b0a50a81a9"
+					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 106.68 161.29 0)
 		(unit 1)
@@ -22331,7 +22606,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 275.59 54.61 0)
+		(at 275.59 58.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22342,7 +22617,7 @@
 		(fields_autoplaced yes)
 		(uuid "b5265bd5-05c7-4822-8bb8-7d47b5545af3")
 		(property "Reference" "#PWR036"
-			(at 275.59 60.96 0)
+			(at 275.59 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22353,7 +22628,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 278.13 55.8799 0)
+			(at 278.13 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22364,7 +22639,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 275.59 54.61 0)
+			(at 275.59 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22375,7 +22650,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 275.59 54.61 0)
+			(at 275.59 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22386,7 +22661,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 275.59 54.61 0)
+			(at 275.59 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24504,6 +24779,87 @@
 			(project "GEOpath FInder Proto 3"
 				(path "/e3cd1eca-dcd6-4b32-aed0-a3b0a50a81a9"
 					(reference "#PWR075")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 278.13 52.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eb588376-c8c8-4b6b-af66-9ff0e012446a")
+		(property "Reference" "C4"
+			(at 277.114 52.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10nF"
+			(at 281.432 54.102 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 279.0952 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 278.13 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 278.13 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f536c3d-4c87-448c-8b4b-f6d5314c7ef9")
+		)
+		(pin "2"
+			(uuid "ee1fd6ec-aa73-49ec-b67b-d78c4a74efd7")
+		)
+		(instances
+			(project "GEOpath FInder Proto 3"
+				(path "/e3cd1eca-dcd6-4b32-aed0-a3b0a50a81a9"
+					(reference "C4")
 					(unit 1)
 				)
 			)

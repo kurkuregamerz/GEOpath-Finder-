@@ -1,1 +1,28 @@
+(version 1)
+
+# 1. Layer-specific minimum clearance (e.g., 0.15 mm on outer copper layers)
+(rule "Outer Layer Clearance"
+    (constraint clearance (min 0.15mm))
+    (condition "A.Layer == 'F.Cu' || A.Layer == 'B.Cu'")
+)
+
+# 2. High-voltage clearance between two specific net classes
+(rule "High Voltage Isolation"
+    (severity error)
+    (constraint clearance (min 1.5mm))
+    (condition "A.NetClass == 'HV_Mains' && B.NetClass != 'HV_Mains'")
+)
+
+# 3. Minimum silkscreen line width check (warning only)
+(rule "Minimum Silkscreen Width"
+    (severity warning)
+    (constraint assertion "A.Line_Width >= 0.15mm")
+    (condition "A.Layer == '?.Silkscreen' && A.Type != 'text'")
+)
+
+# 4. Component courtyard or footprint-specific rule
+(rule "USB Connector Keepout"
+    (constraint clearance (min 0.5mm))
+    (condition "A.Reference == 'J1'")
+)
 

@@ -559,7 +559,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "GEOpath Finder Gerber/",
       "specctra_dsn": "",
       "vrml": ""
     },
