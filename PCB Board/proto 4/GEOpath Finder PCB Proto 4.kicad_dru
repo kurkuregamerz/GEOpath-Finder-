@@ -1,0 +1,42 @@
+(version 1)
+
+# ==========================================
+# GEOpath Finder - Proto 4
+# Custom PCB Design Rules
+# ==========================================
+
+# USB VBUS power trace
+(rule "VBUS minimum width"
+    (condition "A.Type == 'track' && A.NetName == 'VBUS'")
+    (constraint track_width (min 0.50mm))
+)
+
+# Main 3.3V supply
+(rule "3V3 power minimum width"
+    (condition "A.Type == 'track' && A.NetName == '+3V3'")
+    (constraint track_width (min 0.40mm))
+)
+
+# 1.8V IMU supply
+(rule "1V8 power minimum width"
+    (condition "A.Type == 'track' && A.NetName == '+1V8'")
+    (constraint track_width (min 0.25mm))
+)
+
+# Battery positive
+(rule "Battery positive minimum width"
+    (condition "A.Type == 'track' && A.NetName == 'B+'")
+    (constraint track_width (min 0.50mm))
+)
+
+# Battery protection output
+(rule "Battery output minimum width"
+    (condition "A.Type == 'track' && A.NetName == 'P-'")
+    (constraint track_width (min 0.50mm))
+)
+(rule "USB_DP_Skew"
+    (condition "A.NetClass == 'USBC_'")
+    (constraint skew (max 0.5mm)))
+(rule "USB_DP_Skew"
+    (condition "A.NetClass == 'USBLC_'")
+    (constraint skew (max 0.5mm)))
