@@ -1,41 +1,47 @@
-# GEOpath Finder firmware
+# GEOpath Finder offline map viewer
 
-Arduino/PlatformIO starter firmware for the ESP32-S3-WROOM-1 on Proto 4. It reads a route from microSD, obtains position from the NEO-M8N over I2C/DDC, reads the ICM-20948 magnetometer, and displays distance/bearing prompts on the ER-TFT040-5 with XPT2046 resistive touch.
+Firmware for the ESP32-S3 Proto 4 board. It reads pre-rendered offline map tiles from microSD, keeps the current GPS position centered, and shows compass heading. The map remains north-up; the compass arrow indicates magnetic heading.
 
-## Build
+## Build and flash
 
-Open this folder in PlatformIO and build/upload `esp32-s3-devkitc-1`. The board definition is a convenient ESP32-S3 target; confirm flash size and USB upload settings against the module variant before deployment.
+Open this folder with PlatformIO and build/upload the `esp32-s3-devkitc-1` environment. Connect the board by USB and use PlatformIO's Serial Monitor at 115200 baud for startup status. Confirm the flash/upload settings for the exact ESP32-S3-WROOM module fitted to the PCB.
 
-Copy `data/route.csv` to the SD card root. Replace the sample coordinates. Format:
+## Prepare the SD map
 
-```csv
-latitude,longitude,label
-37.421998,-122.084000,Start
-37.422100,-122.083800,Turn
+The firmware reads **256 × 256 PNG XYZ/Web Mercator map tiles** converted to raw RGB565 files. Its fixed zoom level is `MAP_ZOOM` in `src/main.cpp` (default 16). The card must contain tile paths for that zoom, for example:
+
+```text
+SD card/
+└── maps/
+    └── 16/
+        └── 10482/
+            └── 25333.rgb565
 ```
 
-Lines beginning with `#` are ignored. Up to 300 waypoint rows are loaded.
+Use a map export/cache tool that can save XYZ raster tiles for the area and zoom you need. Keep the source tiles in a standard `z/x/y.png` directory tree, then convert them on your computer:
 
-## PCB-derived GPIO mapping
+```bash
+python -m pip install Pillow
+python tools/tiles_to_rgb565.py ./xyz_png_tiles ./converted_maps
+```
 
-| Signal | ESP32-S3 GPIO | Schematic net |
-|---|---:|---|
-| I2C SDA | 8 | SDA PIN ESP |
-| I2C SCL | 9 | SCL PIN ESP |
-| SPI MOSI | 11 | MOSI IN ESP |
-| SPI SCK | 12 | SCK/CLK ESP |
-| SPI MISO | 13 | MISO IN ESP |
-| microSD CS | 18 | SD socket DAT3 / GPIO net |
-| Display CS | 40 | CSX Display |
-| Display D/C | 39 | DCX Display |
-| Display reset | 38 | RESET DISPLAY |
-| XPT2046 CS | 41 | CS XPT2046 |
-| XPT2046 IRQ | 42 | PENIRQ XPT2046 |
+Copy the converted `16` folder into `/maps` on the SD card. Each RGB565 file is 131,072 bytes. At zoom 16, the device needs the tiles covering your location; include neighboring tiles so the display can pan smoothly as GPS moves. Map imagery can be large: select only the geographic area and zoom levels you need. This firmware currently uses one configured zoom level and does not download maps.
 
-ICM-20948 address is strapped to `0x69`; NEO-M8N DDC address is `0x42`. The NEO UART pins are unconnected in the schematic, so the code uses its I2C/DDC interface. Verify the GNSS module's DDC mode/address and I2C pull-ups on the assembled board.
+Use map data and tile exports whose license and usage terms permit offline storage. The converter only changes image encoding; it does not supply map data.
 
-## Display configuration and calibration
+## Board wiring from the schematic
 
-ER-TFT040-5 uses an ILI9488. This firmware assumes the panel's IM straps select 4-wire SPI and the exact panel option is compatible with the Adafruit ILI9488 SPI driver. Confirm the display datasheet/FPC strap configuration before applying power; the schematic connector does not show the IM strap pins. The schematic wires the four resistive touch electrodes to an XPT2046 controller. Touch coordinates need calibration for the installed glass orientation. Magnetometer heading is raw and should be hard/soft-iron calibrated after assembly; tilt compensation is not yet applied.
+| Signal | ESP32-S3 GPIO |
+|---|---:|
+| I²C SDA / SCL | 8 / 9 |
+| SPI MOSI / SCK / MISO | 11 / 12 / 13 |
+| microSD chip select | 18 |
+| Display CS / D-C / reset | 40 / 39 / 38 |
+| ICM-20948 | I²C address `0x69` |
+| NEO-M8N | I²C/DDC address `0x42` |
 
-The screen shows the next waypoint, straight-line distance, bearing, and a simple left/right cue. A waypoint is considered reached within 8 m. Tap the lower-left touchscreen region to skip a point after touch calibration.
+GPS UART pins are unconnected in the schematic, so the firmware uses the NEO-M8N's DDC/I²C pins on the shared I²C bus. The display and SD card share SPI with separate chip selects.
+
+## Display and compass notes
+
+The screen is configured in portrait (`320 × 480`, `setRotation(0)`). This assumes the ER-TFT040-5 is configured for 4-wire SPI and the ILI9488 driver is compatible with the panel's FPC strap option. Confirm the exact module pinout/strap and logic voltage before powering the panel. The schematic routes a resistive touch controller, but this initial map viewer does not use touch input; zoom is set in firmware. Compass heading is an uncalibrated, level-device magnetic heading. Calibrate hard/soft iron offsets after assembly for dependable direction readings.
